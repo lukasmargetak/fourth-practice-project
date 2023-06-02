@@ -1,0 +1,30 @@
+name: deploy
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu_latest 
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+      - name: Lint
+        run: npm
+  test:
+    runs-on: ubuntu_latest 
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+      - name: Test
+        run: npm test
+  deploy:
+    runs-on: ubuntu_latest 
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+      - name: Deploy
+        run: echo "Deploying"
